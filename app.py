@@ -10,15 +10,15 @@ openai_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("Find the essence of a dish")
 
-dish = st.text_input(label="dish")
-
 llm = ChatOpenAI()
 
-dish = st.text_input(label="dish")
+dish = st.text_input(label="dish", key="dish_input")
 submit = st.button("Find recipes")
 
 find_recipes_prompt = PromptTemplate.from_template("Find five recipes for {dish}. Only output links. No titles.")
+
 get_ingredients_prompt = PromptTemplate.from_template("Visit this web site {recipe} and list ingredient strings without quantity, units, or descriptors. List one ingredient per line and leave off numbers, bullet points, dashes, and anything that prefixes ingredients in the list.")
+
 output_parser = StrOutputParser()
 find_recipes_chain = find_recipes_prompt | llm | output_parser
 get_ingredients_chain = get_ingredients_prompt | llm | output_parser 
