@@ -1,5 +1,7 @@
 ## Jambalaya
 
+Try it [here](https://jambalaya.streamlit.app/)!
+
 A small app that uses OpenAI, LangChain, and Streamlit to define the “essence” of a recipe. It finds recipes of the same dish, pulls out the ingredients, and find common ingredients across recipes. 
 
 When I cook, I enjoy making my own version of classic dishes. First though, it helps to understand the foundation of the dish which is what inspired this tool.
